@@ -18,9 +18,9 @@ export const putDb = async (content) => {
   // open jateDB at version 
   const jateDb = await openDB('jateDB', 1);
   // initialize readwrite transaction within jate
-  const tx = jateDb.transaction('jate', 'readwrite');
+  const tx = jateDb.transaction('text', 'readwrite');
   // open the transactions object store
-  const store = tx.objectStore('jate');
+  const store = tx.objectStore('text');
   // use .add method to add content to jate's object store
   const request = store.add({ text: content });
   // await request and respond with results
