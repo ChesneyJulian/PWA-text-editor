@@ -43,7 +43,8 @@ export const getDb = async () => {
   const result = await request;
 
   console.log('data from jateDB', result);
-  return result;
+  // extract value from result to send as data in editor.js because codeMirror requires string input
+  return result.value;
 };
 
 initdb();
