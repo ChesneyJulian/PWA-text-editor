@@ -41,10 +41,11 @@ export const getDb = async () => {
   const request = store.getAll();
   // await request and respond with results
   const result = await request;
-
-  console.log('data from jateDB', result);
-  // extract value from result to send as data in editor.js because codeMirror requires string input
-  return result.value;
+  console.log('Getting data from jateDB ', result);
+  // map result to extract text from each index
+  const textArr = result.map(item => item.text);
+  // return last item of textArr to become value of editor
+  return textArr[textArr.length - 1];
 };
 
 initdb();

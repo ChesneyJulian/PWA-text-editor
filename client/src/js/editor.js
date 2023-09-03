@@ -28,7 +28,8 @@ export default class {
     // Fall back to localStorage if nothing is stored in indexeddb, and if neither is available, set the value to header.
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
-      this.editor.setValue(data || localData || header);
+      this.editor.setValue( data || localData || header);
+
       // get line count from editor and setCursor to begin after lines of code
       const lines = this.editor.lineCount();
       console.log('LINES ', lines);
@@ -47,3 +48,4 @@ export default class {
     });
   }
 }
+;
