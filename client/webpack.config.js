@@ -64,6 +64,7 @@ module.exports = () => {
             }
           }
         },
+        // implement testing for png so that icon is cached for offline use
         {
           test: /\.(png)$/i,
           type: 'asset/resource',
