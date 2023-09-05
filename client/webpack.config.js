@@ -63,7 +63,11 @@ module.exports = () => {
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             }
           }
-        }
+        },
+        {
+          test: /\.(png)$/i,
+          type: 'asset/resource',
+        },
       ],
     },
   };
